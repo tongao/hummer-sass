@@ -1,0 +1,26 @@
+{
+  "name": "hummer-sass",
+  "version": "0.0.1",
+  "description": "hummer sass",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tongao/hummer-sass.git"
+  },
+  "keywords": [
+    "sass",
+    "hummer"
+  ],
+  "author": "Ta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tongao/hummer-sass/issues"
+  },
+  "homepage": "https://github.com/tongao/hummer-sass#readme"
+}

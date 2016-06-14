@@ -37,8 +37,9 @@ $zindexModal:           1100 !default;
 //------〔color相关〕------------------------
 
 //link color
-$linkColor:				#333;
-$linkHoverColor:		#333;
+$F:               #FFF;
+$fontColor:			  #333;
+$fontHoverColor:	      #0074D9;
 
 
 //by: https://github.com/mrmrs/colors/blob/master/sass/_variables.scss
@@ -67,6 +68,3 @@ $black:  				#111;
 $grayDarker:        	#333 !default;
 $grayDark:          	#999 !default;
 $gray:              	#ccc !default;
-
-
-

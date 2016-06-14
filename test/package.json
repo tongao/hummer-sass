@@ -1,0 +1,38 @@
+{
+  "name": "hummer-sass",
+  "version": "0.0.1",
+  "description": "hummer sass",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hummer-sass"
+  ],
+  "author": "tongao",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tongao/hummer-sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tongao/hummer-sass/issues"
+  },
+  "homepage": "https://github.com/tongao/hummer-sass#readme"
+}

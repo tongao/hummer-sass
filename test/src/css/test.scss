@@ -1,0 +1,173 @@
+// @introduction  hummer sass test
+// @authors       Tongao (email:header@163.com)
+// @date          2016-06-05 11:51
+// @update        2016-06-05 11:51
+
+
+// import base
+@import "../../../base";
+
+// header
+.header {
+  height: 260px;
+  text-align: center;
+  background-color: #27AE60;
+  color: $F;
+  h1 {
+    padding-top: 70px;
+    font-size: 50px;
+    font-weight: 500;
+    font-family: Tahoma;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+// main
+.main {
+  width: 1000px;
+  @include center-block;
+  padding: 60px 0;
+
+  // title
+  .title {
+    position: relative;
+    padding-left: 20px;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    h2 {
+      position: absolute;
+      top: -20px;
+      font-weight: 100;
+      font-size: 25px;
+      background-color: #fff;
+      padding: 0 10px;
+      font-weight: 300;
+    }
+  }
+
+  // list style
+  .list {
+
+    &-title {
+      font-size: 18px;
+      font-weight: 300;
+      padding: 20px 0;
+      color: #555;
+      border-bottom: 1px solid #F9F9F9;
+      &::before {
+        content: "＞";
+        color: #27AE60;
+      }
+    }
+    &-cont {
+      padding-top: 20px;
+    }
+  }
+}
+
+code, kbd, pre, samp {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace, 'Helvetica Neue', 'Lucida Grande', 'Lantinghei SC', 'Open Sans', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
+    font-size: 14px;
+}
+
+// test start
+
+// center-block
+.center-block {
+  width: 980px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #DDD;
+  @include center-block;
+}
+
+// inline-block
+.inline-block {
+  height: 100px;
+  @include center-block;
+  span {
+    width: 300px;
+    height: 100px;
+    @include inline-block;
+    background-color: #DDD;
+    margin-right: 5px;
+  }
+}
+
+// float
+.float {
+  background-color: #DDD;
+  padding: 10px 0;
+  &-fl {
+    @include fl();
+    font-size: 16px;
+    background-color: #27AE60;
+    color: $F;
+  }
+}
+
+// hide
+.hide {
+  @include hidden;
+}
+
+// .text-hide
+.text-hide {
+  @include itb;
+}
+.text-none {
+  @include ita;
+}
+
+// ellipsis-overflow
+.ellipsis {
+  div {
+    margin: 30px;
+  }
+  &-one {
+    @include ellipsis-overflow(200px, 2);
+  }
+  &-two {
+    @include ellipsis-overflow-after(200px, 35px);
+  }
+}
+
+// opacity
+.opacity {
+  @include opacity(70);
+}
+
+// triangle
+.triangle {
+  div {
+    margin: 30px;
+  }
+  &-top {
+    @include triangle(top, 10px, #f90);
+  }
+  &-right {
+    @include triangle(right, 10px, #f90);
+  }
+  &-bottom {
+    @include triangle(bottom, 10px, #f90);
+  }
+  &-left {
+    @include triangle(left, 10px, #f90);
+  }
+}
+
+
+// word-break
+.word-break {
+  width: 300px;
+  @include word-break;
+}
+
+.footer {
+  padding-bottom: 100px;
+  text-align: center;
+}

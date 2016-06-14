@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hummer sass test</title>
+    <link rel="stylesheet" href="./dist/css/test.css" charset="utf-8">
+    <link rel="stylesheet" href="./src/js/style/monokai-sublime.css" charset="utf-8">
+    <script src="./src/js/highlight.pack.js" charset="utf-8"></script>
+  </head>
+  <body>
+      <header class="header">
+        <h1>hummer sass</h1>
+        <p>简单使用指南</p>
+      </header>
+      <main class="main">
+        <article class="article">
+          <div class="title"><h2>简单使用指南</h2></div>
+          <ul class="list">
+            <li>
+              <h3 class="list-title">1、目录划分</h3>
+              <pre>
+                <code>
+                  .
+                  ├── README.md
+                  ├── _base.scss
+                  ├── _function.scss
+                  ├── core
+                  │   ├── _include-media.scss
+                  │   ├── _mixin.scss
+                  │   ├── _reset.scss
+                  │   └── _setting.scss
+                  ├── package.json
+                  └── test
+                      ├── dist
+                      ├── gulpfile.js
+                      ├── index.html
+                      ├── node_modules
+                      ├── package.json
+                      └── src
+                </code>
+              </pre>
+            </li>
+            <li>
+              <h3 class="list-title">2、简单使用</h3>
+              <pre>
+                <code>
+
+                  // import base （如项目使用base时引用）
+                  @import "../base";
+                  // import function （如项目不使用base时引用）
+                  @import "../function";
+                </code>
+              </pre>
+            </li>
+          </ul>
+        </article>
+        <article class="article">
+          <div class="title"><h2>mixin使用指南</h2></div>
+          <ul class="list">
+            <!--  center-block start [[-->
+            <li>
+              <h3 class="list-title">1、居中(center-block)</h3>
+              <div class="list-cont">
+                <div class="center-block">div居中等</div>
+                <pre>
+                  <code>
+                    .center-block {
+                      width: 800px;
+                      height: 30px;
+                      background-color: #DDD;
+                      @include center-block;
+                    }
+                  </code>
+                </pre>
+              </div>
+            </li>
+            <!--  center-block end ]]-->
+            <!--  inline-block start [[-->
+            <li>
+              <h3 class="list-title">2、内联块(inline-block)</h3>
+              <div class="list-cont">
+                <div class="inline-block"><span>1</span><span>2</span><span>3</span></div>
+                  <pre>
+                    <code>
+                      .inline-block {
+                        span {
+                          width: 300px;
+                          height: 100px;
+                          @include inline-block;
+                          background-color: #DDD;
+                          margin-right: 5px;
+                        }
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--  inline-block end ]]-->
+            <!--  float start [[-->
+            <li>
+              <h3 class="list-title">3、float(fl)</h3>
+              <div class="list-cont">
+                <div class="float clear"><div class="float-fl">默认使用float时,如需要IE兼容需将设置中的$lte7改为true,方可解决IE下浮动双倍间距的问题;</div></div>
+                  <pre>
+                    <code>
+                      .float {
+                        background-color: #DDD;
+                        padding: 10px 0;
+                        &-fl {
+                          @include fl();
+                          font-size: 16px;
+                          background-color: #27AE60;
+                          color: $F;
+                        }
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--  float end ]]-->
+            <!--  hide start [[-->
+            <li>
+              <h3 class="list-title">4、hidden() -强制隐藏元素</h3>
+              <div class="list-cont">
+                <div class="float clear"><div class="hide">强制隐藏元素</div></div>
+                  <pre>
+                    <code>
+                      .hide {
+                        @include hidden;
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--  hide end ]]-->
+            <!--  ita - itb start [[-->
+            <li>
+              <h3 class="list-title">5、隐藏文字的两种方式（ ita 、itb ）</h3>
+              <div class="list-cont">
+                <div class="float clear"><div class="text-none">5、隐藏文字的两种方式（</div></div>
+                  <pre>
+                    <code>
+                      .text-hide {
+                        @include itb;
+                      }
+                      .text-none {
+                        @include ita;
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--   ita - itb end ]]-->
+            <!--  text ellipsis-overflow start [[-->
+            <li>
+              <h3 class="list-title">6、一行或多行文字省略两种方式（ ellipsis-overflow-after 、 ellipsis-overflow）</h3>
+              <div class="list-cont">
+                <div class="ellipsis clear">
+                  <div class="ellipsis-one fl">出门在外，手机没电是很令人焦虑的事。然而，智能手机及它的续航功能却很容易处于相互支撑却无法拥抱的状态。玩得爽了，一个不小心，电量可能就消耗光了。当然，为了满足用户需求，各大手机厂商在续航能力方面也有了更多的提升。</div>
+                  <div class="ellipsis-two fl">出门在外，手机没电是很令人焦虑的事。然而，智能手机及它的续航功能却很容易处于相互支撑却无法拥抱的状态。玩得爽了，一个不小心，电量可能就消耗光了。当然，为了满足用户需求，各大手机厂商在续航能力方面也有了更多的提升。</div>
+                </div>
+                  <pre>
+                    <code>
+                      .ellipsis {
+                        // 需要输入宽度和行数
+                        &-one {
+                          @include ellipsis-overflow(200px, 2);
+                        }
+                        // 需要输入宽度和自调高度
+                        //如背景颜色不同需在后方写颜色如 ellipsis-overflow-after(200px, 35px, #DDD) 默认为白色背景
+                        &-two {
+                          @include ellipsis-overflow-after(200px, 35px);
+                        }
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--  text ellipsis-overflow  end ]]-->
+            <!--  text ellipsis-overflow start [[-->
+            <li>
+              <h3 class="list-title">7、opacity </h3>
+              <div class="list-cont">
+                  <div class="opacity">
+                    有透明效果哦~
+                  </div>
+                  <pre>
+                    <code>
+                      .opacity {
+                        @include opacity(70);
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!--  text ellipsis-overflow  end ]]-->
+            <!--  三角箭头 start [[-->
+            <li>
+              <h3 class="list-title">8、三角箭头 </h3>
+              <div class="list-cont">
+                  <div class="triangle clear">
+                    <div class="triangle-top fl"></div>
+                    <div class="triangle-right fl"></div>
+                    <div class="triangle-bottom fl"></div>
+                    <div class="triangle-left fl"></div>
+                  </div>
+                  <pre>
+                    <code>
+                      // triangle
+                      .triangle {
+                        &-top {
+                          @include triangle(top, 10px, #f90);
+                        }
+                        &-right {
+                          @include triangle(right, 10px, #f90);
+                        }
+                        &-bottom {
+                          @include triangle(bottom, 10px, #f90);
+                        }
+                        &-left {
+                          @include triangle(left, 10px, #f90);
+                        }
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!-- 三角箭头  end ]]-->
+            <!--  英文切割换行 start [[-->
+            <li>
+              <h3 class="list-title">9、英文切割换行 </h3>
+              <div class="list-cont">
+                  <div class="word-break">
+                      React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+                  </div>
+                  <pre>
+                    <code>
+                      // word-break
+                      .word-break {
+                        width: 300px;
+                        @include word-break;
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!-- 英文切割换行  end ]]-->
+            <!--  mediaquery start [[-->
+            <li>
+              <h3 class="list-title">10、media query </h3>
+              <div class="list-cont">
+
+                  <pre>
+                    <code>
+                      @include media("<=750px") {
+                      		height: 153px;
+                      }
+                    </code>
+                  </pre>
+              </div>
+            </li>
+            <!-- 英文切割换行  end ]]-->
+        </article>
+      </main>
+      <footer class="footer">
+        © Ta 2016
+      </footer>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
